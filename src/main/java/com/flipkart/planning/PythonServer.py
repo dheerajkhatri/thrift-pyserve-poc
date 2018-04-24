@@ -19,6 +19,10 @@ class HelloWorldHandler:
     def getValue(self, variable):
         return eval(variable)
 
+    def execScript(self, scriptName):
+        exec("import " + eval('scriptName'))
+        exec('scriptName')
+
     def sayMsg(self, msg):
         print msg
 

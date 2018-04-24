@@ -26,6 +26,7 @@ if len(sys.argv) <= 1 or sys.argv[1] == '--help':
     print('Functions:')
     print('  void assignValue(string variable, string value)')
     print('  string getValue(string variable)')
+    print('  void execScript(string scriptName)')
     print('  void sayMsg(string msg)')
     print('')
     sys.exit(0)
@@ -117,6 +118,12 @@ elif cmd == 'getValue':
         print('getValue requires 1 args')
         sys.exit(1)
     pp.pprint(client.getValue(args[0],))
+
+elif cmd == 'execScript':
+    if len(args) != 1:
+        print('execScript requires 1 args')
+        sys.exit(1)
+    pp.pprint(client.execScript(args[0],))
 
 elif cmd == 'sayMsg':
     if len(args) != 1:

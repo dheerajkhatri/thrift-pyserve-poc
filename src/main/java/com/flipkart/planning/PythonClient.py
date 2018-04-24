@@ -16,11 +16,16 @@ try:
     client = HelloWorld.Client(protocol)
     transport.open()
     client.sayMsg("Hey Baby Drop it Down, Just wanna see you hit the Ground!!")
+
     client.assignValue("x","23")
     client.assignValue("y","3")
+
     value1 = client.getValue("x")
     value2 = client.getValue("y")
     print value1,value2
+
+    client.execScript("test")
+
     transport.close()
 
 except Thrift.TException, tx:
